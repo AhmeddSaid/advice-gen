@@ -16,9 +16,9 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Message advice={advice} count={count} getAdvice={getAdvice} />
-    </div>
+    </>
   );
 };
 

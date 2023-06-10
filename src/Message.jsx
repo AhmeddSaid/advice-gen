@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import "./index.css";
+
 const Message = (props) => {
   return (
     <div className="container">
