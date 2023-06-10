@@ -1,30 +1,15 @@
-import { useState, useEffect } from "react";
-
-const App = () => {
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
-
-  async function getAdvice() {
-    const res = await fetch("https://api.adviceslip.com/advice");
-    const data = await res.json();
-    setAdvice(data.slip.advice);
-    setCount((prevCount) => prevCount + 1);
-  }
-
-  useEffect(() => {
-    getAdvice();
-  }, []);
-
+/* eslint-disable react/prop-types */
+const Message = (props) => {
   return (
     <div className="container">
       <h1 className="title">Advice Generator</h1>
-      <p className="advice">{advice}</p>
-      <button className="button" onClick={getAdvice}>
+      <p className="advice">{props.advice}</p>
+      <button className="button" onClick={props.getAdvice}>
         Get Advice
       </button>
-      <p className="count">You Generated {count} Advices</p>
+      <p className="count">You Generated {props.count} Advices</p>
     </div>
   );
 };
 
-export default App;
+export default Message;
